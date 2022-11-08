@@ -1,0 +1,59 @@
+package com.example.online_energy_utility_platform_backend.service;
+
+import com.example.online_energy_utility_platform_backend.model.ClientDTO;
+import com.example.online_energy_utility_platform_backend.model.ManagerDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class AccountsValidator {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountsValidator.class);
+    
+    private static String areCredentialsValid(String username, String email, String password) {
+
+        LOGGER.info("Account with username: " + username + " and email address: " + email + " is verified...");
+        if (username == null || username.equals("")) {
+            LOGGER.info("Username cannot be empty");
+            return "Username cannot be empty";
+        }
+
+
+        if (email == null || email.equals("")) {
+            LOGGER.info("Email address cannot be empty");
+            return "Email cannot be empty";
+        }
+        if (!email.contains("@") || !email.contains(".")) {
+            LOGGER.info("Email address does not contain @ or .");
+            return "Invalid email address.";
+        }
+        if (password == null || password.equals("")) {
+            LOGGER.info("Password is empty.");
+            return "Password cannot be empty";
+        }
+        LOGGER.info("Account with username: " + username + " and email address: " + email + " is valid.");
+        return "valid";
+    }
+    
+    public static String isClientAccountValid(ClientDTO Client) {
+
+        String credentialsValidity = areCredentialsValid(Client.getUsername(), Client.getEmail(), Client.getPassword());
+        if (!credentialsValidity.equals("valid")) {
+            return credentialsValidity;
+        } else {
+            if (Client.getFirstName() == null || Client.getFirstName().equals("")) {
+                LOGGER.info("First name is empty");
+                return "First name field cannot be empty";
+            }
+            if (Client.getLastName() == null || Client.getLastName().equals("")) {
+                LOGGER.info("Last name is empty");
+                return "Last name field cannot be empty";
+            }
+        }
+
+        return "valid";
+    }
+
+    public static String isManagerAccountValid(ManagerDTO ManagerDTO) {
+        return areCredentialsValid(ManagerDTO.getUsername(), ManagerDTO.getEmail(), ManagerDTO.getPassword());
+    }
+
+}
