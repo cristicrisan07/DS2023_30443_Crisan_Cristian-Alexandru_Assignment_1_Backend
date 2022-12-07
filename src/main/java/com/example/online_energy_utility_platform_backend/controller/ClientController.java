@@ -34,5 +34,12 @@ public class ClientController {
         return ResponseEntity.status(httpStatus).body(clientDTO);
     }
 
+//    @MessageMapping("/chat")
+//    @SendTo("/topic/messages")
+//    public OutputMessageDTO send(MessageDTO message) throws Exception {
+//        String time = new SimpleDateFormat("HH:mm").format(new Date());
+//        return new OutputMessageDTO(message.getFrom(), message.getText(), time);
+//    }
+
     
 }

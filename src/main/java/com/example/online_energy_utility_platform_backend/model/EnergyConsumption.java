@@ -12,7 +12,7 @@ public class EnergyConsumption {
     private Long id;
 
     @Column(nullable = false)
-    private Timestamp timestamp;
+    private String timestamp;
 
     @Column(nullable = false)
     private double value_in_kWh;
@@ -32,7 +32,7 @@ public class EnergyConsumption {
         this.meteringDevice = meteringDevice;
     }
 
-    public EnergyConsumption(Timestamp timestamp, double value) {
+    public EnergyConsumption(String timestamp, double value) {
         this.timestamp = timestamp;
         this.value_in_kWh = value;
     }
@@ -41,11 +41,11 @@ public class EnergyConsumption {
         return id;
     }
 
-    public Timestamp getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 

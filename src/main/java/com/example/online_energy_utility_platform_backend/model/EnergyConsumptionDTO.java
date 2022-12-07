@@ -3,10 +3,10 @@ package com.example.online_energy_utility_platform_backend.model;
 import java.sql.Timestamp;
 
 public class EnergyConsumptionDTO {
-    private Timestamp timestamp;
+    private String timestamp;
     private double value_in_kWh;
 
-    public EnergyConsumptionDTO(Timestamp timestamp, double value_in_kWh) {
+    public EnergyConsumptionDTO(String timestamp, double value_in_kWh) {
         this.timestamp = timestamp;
         this.value_in_kWh = value_in_kWh;
     }
@@ -15,11 +15,11 @@ public class EnergyConsumptionDTO {
 
     }
 
-    public Timestamp getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 

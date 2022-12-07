@@ -28,7 +28,9 @@ public class DTOConverter {
 
         Client client = meteringDevice.getClient();
 
-        return new MeteringDeviceDTO(meteringDevice.getId(), meteringDevice.getDescription(), meteringDevice.getAddress(), meteringDevice.getMax_hour_energy_cons(), meteringDevice.getEnergyConsumptionSet().stream().map(this::fromEnergyConsumptionToDTO).collect(Collectors.toSet()),client == null ? "": client.getUsername());
+       // return new MeteringDeviceDTO(meteringDevice.getId(), meteringDevice.getDescription(), meteringDevice.getAddress(), meteringDevice.getMax_hour_energy_cons(), meteringDevice.getEnergyConsumptionSet().stream().map(this::fromEnergyConsumptionToDTO).collect(Collectors.toSet()),client == null ? "": client.getUsername());
+        return new MeteringDeviceDTO(meteringDevice.getId(), meteringDevice.getDescription(), meteringDevice.getAddress(), meteringDevice.getMax_hour_energy_cons(),client == null ? "": client.getUsername());
+
     }
 
     public MeteringDevice fromDTOtoMeteringDevice(MeteringDeviceDTO meteringDeviceDTO){

@@ -1,5 +1,6 @@
 package com.example.online_energy_utility_platform_backend;
 
+import com.example.online_energy_utility_platform_backend.service.MessageOperationsService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -14,7 +15,13 @@ public class OnlineEnergyUtilityPlatformBackendApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(OnlineEnergyUtilityPlatformBackendApplication.class, args);
-    }
+//        try {
+//            MessageOperationsService.main(new String[]{});
+//        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//        }
+        }
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {

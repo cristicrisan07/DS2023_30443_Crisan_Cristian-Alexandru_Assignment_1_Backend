@@ -7,15 +7,15 @@ public class    MeteringDeviceDTO {
     private String description;
     private String address;
     private double max_hour_energy_cons;
-    private Set<EnergyConsumptionDTO> energyConsumption;
+    //private Set<EnergyConsumptionDTO> energyConsumption;
     private String clientUsername;
 
-    public MeteringDeviceDTO(long Id,String description, String address, double max_hour_energy_cons, Set<EnergyConsumptionDTO> energyConsumption,String clientUsername) {
+    public MeteringDeviceDTO(long Id,String description, String address, double max_hour_energy_cons,String clientUsername) {
         this.Id=Id;
         this.description = description;
         this.address = address;
         this.max_hour_energy_cons = max_hour_energy_cons;
-        this.energyConsumption = energyConsumption;
+        //this.energyConsumption = energyConsumption;
         this.clientUsername=clientUsername;
     }
 
@@ -61,13 +61,13 @@ public class    MeteringDeviceDTO {
         this.max_hour_energy_cons = max_hour_energy_cons;
     }
 
-    public Set<EnergyConsumptionDTO> getEnergyConsumption() {
-        return energyConsumption;
-    }
-
-    public void setEnergyConsumption(Set<EnergyConsumptionDTO> energyConsumption) {
-        this.energyConsumption = energyConsumption;
-    }
+//    public Set<EnergyConsumptionDTO> getEnergyConsumption() {
+//        return energyConsumption;
+//    }
+//
+//    public void setEnergyConsumption(Set<EnergyConsumptionDTO> energyConsumption) {
+//        this.energyConsumption = energyConsumption;
+//    }
 
     public String getClientUsername() {
         return clientUsername;

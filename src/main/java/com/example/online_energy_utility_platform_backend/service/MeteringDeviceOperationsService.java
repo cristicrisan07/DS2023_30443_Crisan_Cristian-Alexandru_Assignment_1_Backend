@@ -19,7 +19,6 @@ public class MeteringDeviceOperationsService {
 
     private final MeteringDeviceRepository meteringDeviceRepository;
     private final ClientRepository clientRepository;
-
     private static final Logger LOGGER = LoggerFactory.getLogger(MeteringDeviceOperationsService.class);
     private final DTOConverter dtoConverter;
 
@@ -130,6 +129,12 @@ public class MeteringDeviceOperationsService {
 
         return null;
     }
+    public MeteringDevice getMeteringDeviceWithId(long id){
 
+        Optional<MeteringDevice> meteringDevice = meteringDeviceRepository.findById(id);
+
+        return meteringDevice.orElse(null);
+
+    }
 
 }
