@@ -41,7 +41,7 @@ public class MessageOperationsService {
     @RabbitListener(queues = "assignment_queue")
     public void consumeMessages() throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("host.docker.internal");
+        factory.setHost("localhost");
         //factory.setHost("localhost");
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
